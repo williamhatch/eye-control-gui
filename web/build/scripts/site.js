@@ -10,7 +10,7 @@
         },
         initWebSocket: function() {
           console.log("Using bogus websocket servername, fix this!");
-          App.websocket = new WebSocket("ws://localhost:8080");
+          App.websocket = new WebSocket("ws://" + window.location.host);
           App.websocket.onmessage = App.Functions.onMessage;
           App.websocket.onopen = function() {
             return $("div.header").addClass("connected");
